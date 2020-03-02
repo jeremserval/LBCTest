@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  LBCTest
+
+  Created by Jeremie Serval on 26/02/2020.
+  Copyright © 2020 Jeremie Serval. All rights reserved.
+*/
+
+"LBC.OK" = "OK";
+"LBC.ERROR.MESSAGE" = "Error";
+"LBC.ERROR.TECH" = "Something went wrong, please try again";
+
+"LBC.EMPTYLIST.MESSAGE" = "No data";
+"LBC.EMPTYLIST.REFRESH" = "Refresh";
+
+"LBC.Filter" = "filter";
+"LBC.Filters" = "filters";
+
+"LBC.BACK" = "Back";
+"LBC.VALIDATE" = "Validate";
