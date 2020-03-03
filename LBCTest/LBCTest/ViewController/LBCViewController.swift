@@ -24,7 +24,7 @@ class LBCViewController: UIViewController {
         var allConstraints: [NSLayoutConstraint] = []
 
         let iconVerticalConstraints = NSLayoutConstraint.constraints(
-          withVisualFormat: "V:|[headerView(100)]",
+          withVisualFormat: "V:|[headerView(64)]",
           metrics: nil,
           views:["headerView" : headerView!])
         allConstraints += iconVerticalConstraints

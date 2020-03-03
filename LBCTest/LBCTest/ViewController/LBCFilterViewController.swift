@@ -43,7 +43,7 @@ class LBCFilterViewController: LBCViewController {
         validateButton = UIButton(type: .system)
         
         validateButton.setTitle(NSLocalizedString("LBC.VALIDATE", comment: ""), for: .normal)
-        validateButton.titleLabel?.font = UIFont(name: "Raleway-Black", size: 18)
+        validateButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         validateButton.setTitleColor(.white, for: .normal)
         validateButton.backgroundColor = .LBCColor
         validateButton.translatesAutoresizingMaskIntoConstraints = false

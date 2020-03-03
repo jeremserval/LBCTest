@@ -38,9 +38,9 @@ class LBCHomeItemTableViewCell: UITableViewCell {
         urgentIndicator = UIView()
         urgentIndicator.translatesAutoresizingMaskIntoConstraints = false
         urgentIndicator.isHidden = !item.is_urgent
-        urgentIndicator.backgroundColor = .red
+        urgentIndicator.backgroundColor = .LBCColor
         addSubview(urgentIndicator)
-        urgentIndicator.widthAnchor.constraint(equalToConstant: 8).isActive = true
+        urgentIndicator.widthAnchor.constraint(equalToConstant: 4).isActive = true
         urgentIndicator.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         urgentIndicator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
         urgentIndicator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
@@ -49,37 +49,40 @@ class LBCHomeItemTableViewCell: UITableViewCell {
     
     func updateWithItem(item: LBCItem, category: LBCCategory) {
         self.item = item
+      
         if item.images_url.count > 0 {
             initPictureView()
         }
 
+        backgroundColor = item.is_urgent ? .LBCLightColor : .white
         initUrgentIndicator(item)
         
         // MARK: Init TitleLabel
         titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = item.title
-        titleLabel.numberOfLines = 2
-        titleLabel.font = UIFont(name: "Raleway-Bold", size: 16)
+        titleLabel.text = item.is_urgent ? "✴️ " + item.title : item.title
+        titleLabel.numberOfLines = 0
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         addSubview(titleLabel)
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: pictureView.trailingAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: urgentIndicator.leadingAnchor, constant: -8).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        //titleLabel.heightAnchor.constraint(equalToConstant: 42).isActive = true
         titleLabel.layoutIfNeeded()
+        titleLabel.sizeToFit()
 
         // MARK: Init Category/Price labels
         categoryLabel = UILabel()
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel.text = category.name
-        categoryLabel.font = UIFont(name: "Raleway-Regular", size: 12)
+        categoryLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         addSubview(categoryLabel)
 
         priceLabel = UILabel()
         priceLabel.text = item.priceString()
         priceLabel.textColor = .LBCColor
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        priceLabel.font = UIFont(name: "Raleway-Regular", size: 12)
+        priceLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         addSubview(priceLabel)
         
         priceLabel.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.bottomAnchor, constant: 8).isActive = true
@@ -102,6 +105,7 @@ class LBCHomeItemTableViewCell: UITableViewCell {
         pictureView.translatesAutoresizingMaskIntoConstraints = false
         pictureView.load(from: URL(string: item?.images_url["small"] ?? "")!)
         pictureView.clipsToBounds = true
+        pictureView.backgroundColor = .lightGray
         addSubview(pictureView)
         pictureView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         pictureView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true

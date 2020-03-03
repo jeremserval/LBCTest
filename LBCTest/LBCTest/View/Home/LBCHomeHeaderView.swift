@@ -27,11 +27,11 @@ class LBCHomeHeaderView: UIView {
     
     fileprivate func initTitleLabel() {
         titleLabel = LBCTitleLabel()
-        titleLabel.text = "LeboncoinTest"
+        titleLabel.text = "leboncoin test"
         addSubview(titleLabel)
         let xConstraint = NSLayoutConstraint(item: titleLabel!, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
 
-        let yConstraint = NSLayoutConstraint(item: titleLabel!, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let yConstraint = NSLayoutConstraint(item: titleLabel!, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 10)
 
         NSLayoutConstraint.activate([xConstraint, yConstraint])
     }

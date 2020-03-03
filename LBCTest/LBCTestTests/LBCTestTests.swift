@@ -19,7 +19,7 @@ class LBCTestTests: XCTestCase {
         XCTAssertTrue(item.images_url.keys.contains("small"))
         XCTAssertTrue(item.images_url.keys.contains("thumb"))
         XCTAssertNotNil(item.title)
-        XCTAssertEqual(item.priceString(), "1.0 €")
+        XCTAssertEqual(item.priceString(), "1 €")
         
     }
     

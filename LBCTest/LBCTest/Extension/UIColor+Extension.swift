@@ -14,6 +14,9 @@ extension UIColor {
         return UIColor(hex: "#FF6D15FF")!
     }
 
+    open class var LBCLightColor: UIColor {
+      return UIColor(hex: "#FFF4EDFF")!
+    }
     
     // Conversion Color Hexa
    public convenience init?(hex: String) {

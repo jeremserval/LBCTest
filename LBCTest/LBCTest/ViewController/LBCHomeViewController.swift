@@ -22,6 +22,11 @@ class LBCHomeViewController: LBCViewController, MainViewProtocol {
         initContentView()
         initFilterView()
     }
+  
+    override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      self.updateContentView([])
+    }
     
     init(with api: LBCAPIManager) {
         self.apiManager = api
@@ -48,8 +53,10 @@ class LBCHomeViewController: LBCViewController, MainViewProtocol {
                 let filterList = list.filter { (item) -> Bool in
                     return filters.contains(item.category_id)
                 }
-                
-                self?.contentView.update(with: filterList, categories: categories)
+              
+                DispatchQueue.main.async {
+                  self?.contentView.update(with: filterList, categories: categories)
+                }
             }
         }
     }

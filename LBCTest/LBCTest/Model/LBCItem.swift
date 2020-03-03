@@ -13,7 +13,7 @@ struct LBCItem: Codable {
     var category_id: Int
     var title: String
     var description: String
-    var price: Double
+    var price: Int
     var images_url: [String: String]
     var creation_date: String
     var is_urgent: Bool

@@ -21,7 +21,7 @@ class LBCTitleLabel: UILabel {
     }
     
     fileprivate func commonInit() {
-        font = UIFont(name: "Raleway-Black", size: 24)
+        font = UIFont(name: "Raleway-Black", size: 20)
         textAlignment = .center
         textColor = .white
         translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +42,7 @@ class LBCEmptyLabel: UILabel {
     }
     
     fileprivate func commonInit() {
-        font = UIFont(name: "Raleway-Black", size: 18)
+        font = UIFont.systemFont(ofSize: 18, weight: .medium)
         textAlignment = .center
         textColor = .white
         translatesAutoresizingMaskIntoConstraints = false

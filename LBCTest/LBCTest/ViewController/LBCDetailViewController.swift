@@ -51,7 +51,7 @@ class LBCDetailViewController: LBCViewController {
             })?.name
         categoryLabel.textColor = .LBCColor
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
-        categoryLabel.font = UIFont(name: "Raleway-Regular", size: 12)
+        categoryLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         view.addSubview(categoryLabel)
         categoryLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4).isActive = true
         categoryLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
@@ -64,7 +64,7 @@ class LBCDetailViewController: LBCViewController {
         descriptionTV = UITextView()
         descriptionTV.text = item?.description
         descriptionTV.translatesAutoresizingMaskIntoConstraints = false
-        descriptionTV.font = UIFont(name: "Raleway-Regular", size: 16)
+        descriptionTV.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         descriptionTV.sizeToFit()
         descriptionTV.isEditable = false
         descriptionTV.isScrollEnabled = false
@@ -82,7 +82,7 @@ class LBCDetailViewController: LBCViewController {
         dateLabel.text = item?.dateString()
         dateLabel.textColor = .gray
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateLabel.font = UIFont(name: "Raleway-Regular", size: 16)
+        dateLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         view.addSubview(dateLabel)
         dateLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 8).isActive = true
         dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
@@ -97,7 +97,7 @@ class LBCDetailViewController: LBCViewController {
         priceLabel.text = item?.priceString()
         priceLabel.textColor = .LBCColor
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        priceLabel.font = UIFont(name: "Raleway-Regular", size: 24)
+        priceLabel.font = UIFont.systemFont(ofSize: 19, weight: .medium)
         view.addSubview(priceLabel)
         priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
         priceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
@@ -111,9 +111,8 @@ class LBCDetailViewController: LBCViewController {
         titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = item?.title
-        titleLabel.textColor = .LBCColor
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont(name: "Raleway-Bold", size: 24)
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         view.addSubview(titleLabel)
         titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
